@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today — Wed 28 Oct 2026 · Submissions day</title>
+<meta name="description" content="One day, one list: FSJP viva at 09:30, then ED, COA, AOA, FSJP and ESE submissions, and DSGT mam's sign on the slip.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4
+ * Genre: playful · Macrostructure: Day Ledger · Theme: Hum-like warm paper
+ * Audience: kp, on his phone · Use: tick off today's viva + submissions · Tone: bold, warm, playful
+ * Inference (user waved through by ordering the build): audience = kp · use = today's checklist · tone = bold/warm.
+ * Tokens: every colour and font below references var(--*) — no inline hex in components. */
+:root {
+  --color-paper: #FFF6E9;
+  --color-paper-2: #FFFFFF;
+  --color-ink: #1C1917;
+  --color-ink-soft: #57534E;
+  --color-line: #E7DDCB;
+  --color-accent: #E8442E;
+  --color-accent-ink: #FFFFFF;
+  --color-done: #15803D;
+  --color-done-soft: #DCFCE7;
+  --color-viva: #1D4ED8;
+  --color-viva-soft: #DBEAFE;
+  --color-sign: #7C3AED;
+  --color-sign-soft: #EDE9FE;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --radius-card: 20px;
+  --radius-pill: 999px;
+}
+* { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+}
+.wrap { max-width: 560px; margin: 0 auto; padding: 20px 16px 40px; min-width: 0; }
+
+/* Masthead */
+.masthead { padding: 14px 4px 18px; }
+.eyebrow {
+  font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--color-accent);
+}
+h1 {
+  font-family: var(--font-display); font-style: normal;
+  font-size: clamp(44px, 14vw, 72px); line-height: 0.95; letter-spacing: -0.02em;
+  margin: 6px 0 8px; overflow-wrap: anywhere; min-width: 0;
+}
+.dateline { font-size: 19px; font-weight: 700; margin: 0; }
+.sub { color: var(--color-ink-soft); margin: 6px 0 0; font-size: 15px; }
+
+/* NOW card */
+.now {
+  background: var(--color-ink); color: var(--color-paper);
+  border-radius: var(--radius-card); padding: 20px; margin: 6px 0 22px;
+}
+.now .tag {
+  display: inline-block; background: var(--color-accent); color: var(--color-accent-ink);
+  font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 5px 11px; border-radius: var(--radius-pill);
+}
+.now h2 {
+  font-family: var(--font-display); font-style: normal;
+  font-size: 27px; line-height: 1.1; margin: 12px 0 4px; overflow-wrap: anywhere; min-width: 0;
+}
+.now p { margin: 0; color: #E7E5E4; font-size: 15px; }
+.now .time {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px;
+}
+.now .time span {
+  border: 1px solid #44403C; border-radius: var(--radius-pill);
+  padding: 7px 13px; font-weight: 700; font-size: 14px;
+}
+
+/* Progress */
+.progress { margin: 0 0 18px; }
+.progress-top {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+}
+.progress-top b { font-size: 16px; }
+.progress-top span { font-size: 14px; font-weight: 700; color: var(--color-ink-soft); }
+.bar {
+  height: 12px; background: var(--color-line); border-radius: var(--radius-pill);
+  overflow: hidden; margin-top: 8px;
+}
+.bar i { display: block; height: 100%; width: 0%; background: var(--color-done); border-radius: var(--radius-pill); transition: width 0.25s ease; }
+
+/* List */
+.list-head {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+  margin: 4px 4px 12px;
+}
+.list-head h2 {
+  font-family: var(--font-display); font-style: normal;
+  font-size: 22px; margin: 0; overflow-wrap: anywhere; min-width: 0;
+}
+.list-head span { font-size: 13px; font-weight: 700; color: var(--color-ink-soft); white-space: nowrap; }
+ol.tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.task {
+  background: var(--color-paper-2); border: 1.5px solid var(--color-line);
+  border-radius: var(--radius-card); padding: 6px;
+}
+.task label {
+  display: flex; gap: 13px; align-items: flex-start;
+  padding: 12px 10px; cursor: pointer; min-width: 0; border-radius: 14px;
+}
+.task input {
+  position: absolute; opacity: 0; width: 1px; height: 1px;
+}
+.box {
+  flex: 0 0 auto; width: 46px; height: 46px; margin-top: 1px;
+  border: 2px solid var(--color-ink); border-radius: 13px;
+  display: grid; place-items: center;
+  font-size: 24px; font-weight: 800; color: transparent; background: var(--color-paper-2);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.task input:checked + .box { background: var(--color-done); border-color: var(--color-done); color: #fff; }
+.task input:focus-visible + .box { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+.task-body { min-width: 0; flex: 1; }
+.task-body strong {
+  display: block; font-size: 17.5px; line-height: 1.25; overflow-wrap: anywhere; min-width: 0;
+}
+.task-body small { display: block; color: var(--color-ink-soft); font-size: 14px; margin-top: 3px; }
+.task input:checked ~ .task-body strong { text-decoration: line-through; text-decoration-thickness: 2px; color: var(--color-ink-soft); }
+.task input:checked ~ .task-body small { color: var(--color-done); font-weight: 700; }
+.chip {
+  display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: var(--radius-pill); margin-top: 8px;
+}
+.chip.viva { background: var(--color-viva-soft); color: var(--color-viva); }
+.chip.submit { background: #FFEDD5; color: #9A3412; }
+.chip.sign { background: var(--color-sign-soft); color: var(--color-sign); }
+
+/* Done state */
+.done-banner {
+  display: none; background: var(--color-done-soft); border: 1.5px solid var(--color-done);
+  border-radius: var(--radius-card); padding: 18px 20px; margin-top: 18px;
+}
+.done-banner.show { display: block; }
+.done-banner b { font-size: 19px; display: block; }
+.done-banner span { color: var(--color-ink-soft); font-size: 14px; }
+
+.note { color: var(--color-ink-soft); font-size: 13.5px; margin: 18px 4px 0; }
+footer { margin: 26px 4px 0; padding-top: 14px; border-top: 1.5px solid var(--color-line); color: var(--color-ink-soft); font-size: 13px; }
+footer b { color: var(--color-ink); }
+@media (prefers-reduced-motion: reduce) {
+  .bar i { transition: none; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="masthead">
+    <div class="eyebrow">Today · Submission day</div>
+    <h1>Wed 28 Oct</h1>
+    <p class="dateline">Wednesday, 28 October 2026</p>
+    <p class="sub">Viva first, signatures last. Six things, one day — tick them off as you go.</p>
+  </header>
+
+  <section class="now" aria-label="Happening now">
+    <span class="tag">Right now</span>
+    <h2>FSJP viva</h2>
+    <p>The first thing today — walk in with the FSJP Exam tab open on your phone.</p>
+    <div class="time"><span>09:30 AM</span><span>Room 421</span><span>FSJP · SE-B</span></div>
+  </section>
+
+  <section class="progress" aria-live="polite">
+    <div class="progress-top"><b>Today's list</b><span id="count">0 of 6 done</span></div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0" id="barwrap"><i id="barfill"></i></div>
+  </section>
+
+  <section aria-label="Today's tasks">
+    <div class="list-head"><h2>The list</h2><span>Tap a box to tick</span></div>
+    <ol class="tasks" id="tasks">
+      <li class="task">
+        <label><input type="checkbox" data-task="fsjp"><span class="box" aria-hidden="true">✓</span>
+          <span class="task-body"><strong>FSJP submission</strong><small>Hand in at the viva — Room 421, 09:30</small><span class="chip viva">Viva</span></span></label>
+      </li>
+      <li class="task">
+        <label><input type="checkbox" data-task="ed"><span class="box" aria-hidden="true">✓</span>
+          <span class="task-body"><strong>ED checking and submission</strong><small>Journal checked, then submitted — Exp 08 pitch deck report goes with it</small><span class="chip submit">Submit</span></span></label>
+      </li>
+      <li class="task">
+        <label><input type="checkbox" data-task="coa"><span class="box" aria-hidden="true">✓</span>
+          <span class="task-body"><strong>COA marks filling and submission</strong><small>Fill the marks, then submit the COA journal</small><span class="chip submit">Submit</span></span></label>
+      </li>
+      <li class="task">
+        <label><input type="checkbox" data-task="aoa"><span class="box" aria-hidden="true">✓</span>
+          <span class="task-body"><strong>AOA submission</strong><small>Journal + exam programs, as checked</small><span class="chip submit">Submit</span></span></label>
+      </li>
+      <li class="task">
+        <label><input type="checkbox" data-task="ese"><span class="box" aria-hidden="true">✓</span>
+          <span class="task-body"><strong>ESE submission</strong><small>Assignments 9 + 10 and the rest, handed in</small><span class="chip submit">Submit</span></span></label>
+      </li>
+      <li class="task">
+        <label><input type="checkbox" data-task="dsgt"><span class="box" aria-hidden="true">✓</span>
+          <span class="task-body"><strong>DSGT mam's sign on the submission slip</strong><small>Last stop — no sign, no complete submission</small><span class="chip sign">Sign-off</span></span></label>
+      </li>
+    </ol>
+  </section>
+
+  <div class="done-banner" id="doneBanner">
+    <b>Day cleared.</b>
+    <span>All six done — viva, submissions and the DSGT sign. That's the whole day.</span>
+  </div>
+
+  <p class="note">Ticks save on this phone only — reopening the page keeps your progress for today.</p>
+  <footer><b>today.kptimes.in</b> · Made for one day: 28 October 2026. When the day is over, the list resets with a new day.</footer>
+</main>
+<script>
+(function () {
+  var KEY = 'today-2026-10-28';
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#tasks input[type="checkbox"]'));
+  var countEl = document.getElementById('count');
+  var fill = document.getElementById('barfill');
+  var wrap = document.getElementById('barwrap');
+  var banner = document.getElementById('doneBanner');
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { saved = {}; }
+  function render() {
+    var done = boxes.filter(function (b) { return b.checked; }).length;
+    countEl.textContent = done + ' of ' + boxes.length + ' done';
+    fill.style.width = (done / boxes.length * 100) + '%';
+    wrap.setAttribute('aria-valuenow', String(done));
+    banner.classList.toggle('show', done === boxes.length);
+  }
+  boxes.forEach(function (b) {
+    if (saved[b.getAttribute('data-task')]) b.checked = true;
+    b.addEventListener('change', function () {
+      saved[b.getAttribute('data-task')] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      render();
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
