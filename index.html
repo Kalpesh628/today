@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Today — Wed 28 Oct 2026 · Submissions day</title>
-<meta name="description" content="One day, one list: FSJP viva at 09:30, then ED, COA, AOA, FSJP and ESE submissions, and DSGT mam's sign on the slip. Tick the small steps, watch the day percentage climb.">
+<title>Today — Thu 29 Oct 2026 · Form + maths day</title>
+<meta name="description" content="One day, one list: sign and submit the mentor mentee form, complete the maths writing, then submit it. Tick the small steps, watch the day percentage climb.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -27,6 +27,8 @@
   --color-viva-soft: #DBEAFE;
   --color-sign: #7C3AED;
   --color-sign-soft: #EDE9FE;
+  --color-write: #0E7490;
+  --color-write-soft: #CFFAFE;
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
   --radius-card: 20px;
@@ -124,6 +126,7 @@ ol.tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .chip.viva { background: var(--color-viva-soft); color: var(--color-viva); }
 .chip.submit { background: #FFEDD5; color: #9A3412; }
 .chip.sign { background: var(--color-sign-soft); color: var(--color-sign); }
+.chip.write { background: var(--color-write-soft); color: var(--color-write); }
 /* Sub-steps */
 .subs { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 4px; }
 .subs li { border-top: 1px dashed var(--color-line); }
@@ -166,76 +169,48 @@ footer b { color: var(--color-ink); }
 <div class="sticky-progress" role="region" aria-label="Day progress">
   <div class="sticky-row"><b>Today's progress</b><span class="pct"><span id="pct">0</span><small>%</small></span></div>
   <div class="sticky-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barwrap"><i id="barfill"></i></div>
-  <div class="sticky-sub" id="subline" aria-live="polite">0 of 15 steps done · 0 of 6 tasks complete</div>
+  <div class="sticky-sub" id="subline" aria-live="polite">0 of 5 steps done · 0 of 3 tasks complete</div>
 </div>
 
 <main class="wrap">
   <header class="masthead">
-    <div class="eyebrow">Today · Submission day</div>
-    <h1>Wed 28 Oct</h1>
-    <p class="dateline">Wednesday, 28 October 2026</p>
-    <p class="sub">Viva first, signatures last. Every task breaks into small steps — tick them one by one and the percentage climbs.</p>
+    <div class="eyebrow">Today · Sign, write, submit</div>
+    <h1>Thu 29 Oct</h1>
+    <p class="dateline">Thursday, 29 October 2026</p>
+    <p class="sub">Form first, then the maths writing, then its submission. Tick the small steps and the percentage climbs.</p>
   </header>
 
   <section class="now" aria-label="Happening now">
     <span class="tag">Right now</span>
-    <h2>FSJP viva</h2>
-    <p>The first thing today — walk in with the FSJP Exam tab open on your phone.</p>
-    <div class="time"><span>09:30 AM</span><span>Room 421</span><span>FSJP · SE-B</span></div>
+    <h2>Mentor mentee form</h2>
+    <p>First job today — sign the form, then submit it to the mentee.</p>
+    <div class="time"><span>Sign first</span><span>Then submit</span></div>
   </section>
 
   <section aria-label="Today's tasks">
     <div class="list-head"><h2>The list</h2><span>Tap a box to tick</span></div>
     <ol class="tasks" id="tasks">
-      <li class="task" data-task="fsjp">
-        <div class="task-head"><strong>FSJP submission</strong><span class="task-count" data-count></span></div>
-        <span class="chip viva">Viva</span>
-        <ul class="subs">
-          <li><label><input type="checkbox" data-step="fsjp-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Journal ready to show</span></label></li>
-          <li><label><input type="checkbox" data-step="fsjp-2"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Viva done — 09:30, Room 421</span></label></li>
-          <li><label><input type="checkbox" data-step="fsjp-3"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Submitted to mam</span></label></li>
-        </ul>
-      </li>
-      <li class="task" data-task="ed">
-        <div class="task-head"><strong>ED checking and submission</strong><span class="task-count" data-count></span></div>
-        <span class="chip submit">Submit</span>
-        <ul class="subs">
-          <li><label><input type="checkbox" data-step="ed-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Journal checked</span></label></li>
-          <li><label><input type="checkbox" data-step="ed-2"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Exp 08 pitch deck report attached</span></label></li>
-          <li><label><input type="checkbox" data-step="ed-3"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Submitted</span></label></li>
-        </ul>
-      </li>
-      <li class="task" data-task="coa">
-        <div class="task-head"><strong>COA marks filling and submission</strong><span class="task-count" data-count></span></div>
-        <span class="chip submit">Submit</span>
-        <ul class="subs">
-          <li><label><input type="checkbox" data-step="coa-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Marks filled</span></label></li>
-          <li><label><input type="checkbox" data-step="coa-2"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Journal complete</span></label></li>
-          <li><label><input type="checkbox" data-step="coa-3"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Submitted</span></label></li>
-        </ul>
-      </li>
-      <li class="task" data-task="aoa">
-        <div class="task-head"><strong>AOA submission</strong><span class="task-count" data-count></span></div>
-        <span class="chip submit">Submit</span>
-        <ul class="subs">
-          <li><label><input type="checkbox" data-step="aoa-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Journal complete</span></label></li>
-          <li><label><input type="checkbox" data-step="aoa-2"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Submitted</span></label></li>
-        </ul>
-      </li>
-      <li class="task" data-task="ese">
-        <div class="task-head"><strong>ESE submission</strong><span class="task-count" data-count></span></div>
-        <span class="chip submit">Submit</span>
-        <ul class="subs">
-          <li><label><input type="checkbox" data-step="ese-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Assignments ready</span></label></li>
-          <li><label><input type="checkbox" data-step="ese-2"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Submitted</span></label></li>
-        </ul>
-      </li>
-      <li class="task" data-task="dsgt">
-        <div class="task-head"><strong>DSGT mam's sign on the submission slip</strong><span class="task-count" data-count></span></div>
+      <li class="task" data-task="form">
+        <div class="task-head"><strong>Sign and submit mentor mentee form</strong><span class="task-count" data-count></span></div>
         <span class="chip sign">Sign-off</span>
         <ul class="subs">
-          <li><label><input type="checkbox" data-step="dsgt-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Submission slip ready</span></label></li>
-          <li><label><input type="checkbox" data-step="dsgt-2"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Sign taken from DSGT mam</span></label></li>
+          <li><label><input type="checkbox" data-step="form-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Form signed</span></label></li>
+          <li><label><input type="checkbox" data-step="form-2"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Submitted to mentee</span></label></li>
+        </ul>
+      </li>
+      <li class="task" data-task="maths">
+        <div class="task-head"><strong>Complete maths writing</strong><span class="task-count" data-count></span></div>
+        <span class="chip write">Writing</span>
+        <ul class="subs">
+          <li><label><input type="checkbox" data-step="maths-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Maths writing complete</span></label></li>
+        </ul>
+      </li>
+      <li class="task" data-task="submit">
+        <div class="task-head"><strong>Submission of maths writing</strong><span class="task-count" data-count></span></div>
+        <span class="chip submit">Submit</span>
+        <ul class="subs">
+          <li><label><input type="checkbox" data-step="submit-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Maths writing ready to submit</span></label></li>
+          <li><label><input type="checkbox" data-step="submit-2"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Submitted</span></label></li>
         </ul>
       </li>
     </ol>
@@ -243,15 +218,15 @@ footer b { color: var(--color-ink); }
 
   <div class="done-banner" id="doneBanner">
     <b>Day cleared — 100%.</b>
-    <span>All 15 steps, all 6 tasks — viva, submissions and the DSGT sign. That's the whole day.</span>
+    <span>All 5 steps, all 3 tasks — form signed and submitted, maths written and submitted. That's the whole day.</span>
   </div>
 
   <p class="note">Ticks save on this phone only — reopening the page keeps your progress for today.</p>
-  <footer><b>today.kptimes.in</b> · Made for one day: 28 October 2026. A new day gets a new list.</footer>
+  <footer><b>today.kptimes.in</b> · Made for one day: 29 October 2026. A new day gets a new list.</footer>
 </main>
 <script>
 (function () {
-  var KEY = 'today-2026-10-28-v2';
+  var KEY = 'today-2026-10-29-v2';
   var boxes = Array.prototype.slice.call(document.querySelectorAll('#tasks input[type="checkbox"]'));
   var pctEl = document.getElementById('pct');
   var fill = document.getElementById('barfill');
@@ -276,7 +251,7 @@ footer b { color: var(--color-ink); }
       t.classList.toggle('done', complete);
       if (complete) tasksDone += 1;
     });
-    subline.textContent = done + ' of ' + total + ' steps done · ' + tasksDone + ' of 6 tasks complete';
+    subline.textContent = done + ' of ' + total + ' steps done · ' + tasksDone + ' of 3 tasks complete';
     banner.classList.toggle('show', done === total);
   }
   boxes.forEach(function (b) {
