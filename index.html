@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Today — Thu 29 Oct 2026 · Form + maths day</title>
-<meta name="description" content="One day, one list: sign and submit the mentor mentee form, complete the maths writing, then submit it. Tick the small steps, watch the day percentage climb.">
+<title>Today — Fri 30 Oct 2026 · Fresh day</title>
+<meta name="description" content="One day, one list — fresh and empty. Send today's list and it goes here.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -158,6 +158,7 @@ ol.tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .done-banner span { color: var(--color-ink-soft); font-size: 14px; }
 
 .note { color: var(--color-ink-soft); font-size: 13.5px; margin: 18px 4px 0; }
+.empty { background: var(--color-paper-2); border: 1.5px dashed var(--color-line); border-radius: var(--radius-card); padding: 22px 18px; font-size: 16.5px; color: var(--color-ink-soft); margin: 0; }
 footer { margin: 26px 4px 0; padding-top: 14px; border-top: 1.5px solid var(--color-line); color: var(--color-ink-soft); font-size: 13px; }
 footer b { color: var(--color-ink); }
 @media (prefers-reduced-motion: reduce) {
@@ -169,64 +170,37 @@ footer b { color: var(--color-ink); }
 <div class="sticky-progress" role="region" aria-label="Day progress">
   <div class="sticky-row"><b>Today's progress</b><span class="pct"><span id="pct">0</span><small>%</small></span></div>
   <div class="sticky-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barwrap"><i id="barfill"></i></div>
-  <div class="sticky-sub" id="subline" aria-live="polite">0 of 5 steps done · 0 of 3 tasks complete</div>
+  <div class="sticky-sub" id="subline" aria-live="polite">0 tasks today</div>
 </div>
 
 <main class="wrap">
   <header class="masthead">
-    <div class="eyebrow">Today · Sign, write, submit</div>
-    <h1>Thu 29 Oct</h1>
-    <p class="dateline">Thursday, 29 October 2026</p>
-    <p class="sub">Form first, then the maths writing, then its submission. Tick the small steps and the percentage climbs.</p>
+    <div class="eyebrow">Today · Fresh day</div>
+    <h1>Fri 30 Oct</h1>
+    <p class="dateline">Friday, 30 October 2026</p>
+    <p class="sub">A fresh day, nothing carried over from yesterday. Send today's list and it goes here.</p>
   </header>
 
   <section class="now" aria-label="Happening now">
     <span class="tag">Right now</span>
-    <h2>Mentor mentee form</h2>
-    <p>First job today — sign the form, then submit it to the mentee.</p>
-    <div class="time"><span>Sign first</span><span>Then submit</span></div>
+    <h2>No tasks yet</h2>
+    <p>Yesterday's list is cleared. Send today's list and this page fills up with it.</p>
+    <div class="time"><span>Send today's list</span></div>
   </section>
 
   <section aria-label="Today's tasks">
-    <div class="list-head"><h2>The list</h2><span>Tap a box to tick</span></div>
-    <ol class="tasks" id="tasks">
-      <li class="task" data-task="form">
-        <div class="task-head"><strong>Sign and submit mentor mentee form</strong><span class="task-count" data-count></span></div>
-        <span class="chip sign">Sign-off</span>
-        <ul class="subs">
-          <li><label><input type="checkbox" data-step="form-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Form signed</span></label></li>
-          <li><label><input type="checkbox" data-step="form-2"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Submitted to mentee</span></label></li>
-        </ul>
-      </li>
-      <li class="task" data-task="maths">
-        <div class="task-head"><strong>Complete maths writing</strong><span class="task-count" data-count></span></div>
-        <span class="chip write">Writing</span>
-        <ul class="subs">
-          <li><label><input type="checkbox" data-step="maths-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Maths writing complete</span></label></li>
-        </ul>
-      </li>
-      <li class="task" data-task="submit">
-        <div class="task-head"><strong>Submission of maths writing</strong><span class="task-count" data-count></span></div>
-        <span class="chip submit">Submit</span>
-        <ul class="subs">
-          <li><label><input type="checkbox" data-step="submit-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Maths writing ready to submit</span></label></li>
-          <li><label><input type="checkbox" data-step="submit-2"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">Submitted</span></label></li>
-        </ul>
-      </li>
-    </ol>
+    <div class="list-head"><h2>The list</h2><span>Empty for now</span></div>
+    <p class="empty">Nothing here yet — today's list will appear here when you send it.</p>
   </section>
 
-  <div class="done-banner" id="doneBanner">
-    <b>Day cleared — 100%.</b>
-    <span>All 5 steps, all 3 tasks — form signed and submitted, maths written and submitted. That's the whole day.</span>
-  </div>
+  <div class="done-banner" id="doneBanner"><b>Day cleared — 100%.</b><span>All steps done.</span></div>
 
-  <p class="note">Ticks save on this phone only — reopening the page keeps your progress for today.</p>
-  <footer><b>today.kptimes.in</b> · Made for one day: 29 October 2026. A new day gets a new list.</footer>
+  <p class="note">A fresh list each morning — yesterday's tasks don't carry over.</p>
+  <footer><b>today.kptimes.in</b> · Made for one day: 30 October 2026. A new day gets a new list.</footer>
 </main>
 <script>
 (function () {
-  var KEY = 'today-2026-10-29-v2';
+  var KEY = 'today-2026-10-30-v2';
   var boxes = Array.prototype.slice.call(document.querySelectorAll('#tasks input[type="checkbox"]'));
   var pctEl = document.getElementById('pct');
   var fill = document.getElementById('barfill');
@@ -238,7 +212,7 @@ footer b { color: var(--color-ink); }
   function render() {
     var done = boxes.filter(function (b) { return b.checked; }).length;
     var total = boxes.length;
-    var pct = Math.round(done / total * 100);
+    var pct = total ? Math.round(done / total * 100) : 0;
     pctEl.textContent = pct;
     fill.style.width = pct + '%';
     wrap.setAttribute('aria-valuenow', String(pct));
@@ -251,8 +225,8 @@ footer b { color: var(--color-ink); }
       t.classList.toggle('done', complete);
       if (complete) tasksDone += 1;
     });
-    subline.textContent = done + ' of ' + total + ' steps done · ' + tasksDone + ' of 3 tasks complete';
-    banner.classList.toggle('show', done === total);
+    subline.textContent = total ? (done + ' of ' + total + ' steps done · ' + tasksDone + ' tasks complete') : '0 tasks today';
+    banner.classList.toggle('show', total > 0 && done === total);
   }
   boxes.forEach(function (b) {
     if (saved[b.getAttribute('data-step')]) b.checked = true;
