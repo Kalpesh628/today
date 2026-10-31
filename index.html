@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Today — Sat 31 Oct 2026 · Fresh day</title>
-<meta name="description" content="One day, one list — fresh and empty. Send today's list and it goes here.">
+<title>Today — Sat 31 Oct 2026 · Shopping list</title>
+<meta name="description" content="Today's shopping list: 13 items to buy. Tick each item as you buy it.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@500;700&display=swap" rel="stylesheet">
 <style>
 /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V4
  * Genre: playful · Macrostructure: Day Ledger · Theme: Hum-like warm paper
@@ -29,8 +30,8 @@
   --color-sign-soft: #EDE9FE;
   --color-write: #0E7490;
   --color-write-soft: #CFFAFE;
-  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Noto Sans Devanagari", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", "Noto Sans Devanagari", system-ui, sans-serif;
   --radius-card: 20px;
   --radius-pill: 999px;
 }
@@ -158,7 +159,6 @@ ol.tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .done-banner span { color: var(--color-ink-soft); font-size: 14px; }
 
 .note { color: var(--color-ink-soft); font-size: 13.5px; margin: 18px 4px 0; }
-.empty { background: var(--color-paper-2); border: 1.5px dashed var(--color-line); border-radius: var(--radius-card); padding: 22px 18px; font-size: 16.5px; color: var(--color-ink-soft); margin: 0; }
 footer { margin: 26px 4px 0; padding-top: 14px; border-top: 1.5px solid var(--color-line); color: var(--color-ink-soft); font-size: 13px; }
 footer b { color: var(--color-ink); }
 @media (prefers-reduced-motion: reduce) {
@@ -170,32 +170,52 @@ footer b { color: var(--color-ink); }
 <div class="sticky-progress" role="region" aria-label="Day progress">
   <div class="sticky-row"><b>Today's progress</b><span class="pct"><span id="pct">0</span><small>%</small></span></div>
   <div class="sticky-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barwrap"><i id="barfill"></i></div>
-  <div class="sticky-sub" id="subline" aria-live="polite">0 tasks today</div>
+  <div class="sticky-sub" id="subline" aria-live="polite">0 of 13 steps done · 0 of 1 tasks complete</div>
 </div>
 
 <main class="wrap">
   <header class="masthead">
-    <div class="eyebrow">Today · Fresh day</div>
+    <div class="eyebrow">Today · Shopping list</div>
     <h1>Sat 31 Oct</h1>
     <p class="dateline">Saturday, 31 October 2026</p>
-    <p class="sub">A fresh day, nothing carried over from yesterday. Send today's list and it goes here.</p>
+    <p class="sub">Today's shopping list — 13 items. Tick each item as you buy it and the percentage climbs.</p>
   </header>
 
   <section class="now" aria-label="Happening now">
     <span class="tag">Right now</span>
-    <h2>No tasks yet</h2>
-    <p>Yesterday's list is cleared. Send today's list and this page fills up with it.</p>
-    <div class="time"><span>Send today's list</span></div>
+    <h2>Shopping list</h2>
+    <p>13 items to buy — tick them off as you go.</p>
+    <div class="time"><span>13 items</span></div>
   </section>
 
   <section aria-label="Today's tasks">
-    <div class="list-head"><h2>The list</h2><span>Empty for now</span></div>
-    <p class="empty">Nothing here yet — today's list will appear here when you send it.</p>
+    <div class="list-head"><h2>The list</h2><span>Tap a box to tick</span></div>
+    <ol class="tasks" id="tasks">
+      <li class="task" data-task="shopping">
+        <div class="task-head"><strong>Shopping list</strong><span class="task-count" data-count></span></div>
+        <span class="chip submit">Shopping</span>
+        <ul class="subs">
+          <li><label><input type="checkbox" data-step="shop-1"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">मैदा — 2 किलो (2 kg)</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-2"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">पिठी साखर — 1 किलो / 4 किलो (1 kg / 4 kg)</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-3"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">इलायची (वेलची) — 20 ग्रॅम (20 gm)</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-4"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">रवा — 1 किलो (1 kg)</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-5"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">फुटाण्याची डाळ (डाळं) — 500 ग्रॅम (500 gm)</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-6"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">खोपरा (खोबरं) — 1 किलो (1 kg)</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-7"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">खसखस — 50 ग्रॅम (50 gm)</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-8"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">धने — 100 ग्रॅम (100 gm)</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-9"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">बेकिंग सोडा — 100 ग्रॅम (100 gm)</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-10"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">पातळ पोहे — 1 किलो (1 kg)</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-11"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">अनारसे (Ready Mix) — 1 पाकीट</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-12"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">ड्रायफ्रूट्स (मनुका) — 100 ग्रॅम</span></label></li>
+          <li><label><input type="checkbox" data-step="shop-13"><span class="subbox" aria-hidden="true">✓</span><span class="subtext">उडीद डाळ (सफेद) — 1 किलो (1 kg)</span></label></li>
+        </ul>
+      </li>
+    </ol>
   </section>
 
-  <div class="done-banner" id="doneBanner"><b>Day cleared — 100%.</b><span>All steps done.</span></div>
+  <div class="done-banner" id="doneBanner"><b>Day cleared — 100%.</b><span>All 13 shopping items bought.</span></div>
 
-  <p class="note">A fresh list each morning — yesterday's tasks don't carry over.</p>
+  <p class="note">Ticks save on this phone only — reopening the page keeps your progress for today.<br>Note: पिठी साखर was written as 1 किलो / 4 किलो — left exactly as you wrote it, confirm which one before buying.</p>
   <footer><b>today.kptimes.in</b> · Made for one day: 31 October 2026. A new day gets a new list.</footer>
 </main>
 <script>
@@ -212,7 +232,7 @@ footer b { color: var(--color-ink); }
   function render() {
     var done = boxes.filter(function (b) { return b.checked; }).length;
     var total = boxes.length;
-    var pct = total ? Math.round(done / total * 100) : 0;
+    var pct = Math.round(done / total * 100);
     pctEl.textContent = pct;
     fill.style.width = pct + '%';
     wrap.setAttribute('aria-valuenow', String(pct));
@@ -225,8 +245,8 @@ footer b { color: var(--color-ink); }
       t.classList.toggle('done', complete);
       if (complete) tasksDone += 1;
     });
-    subline.textContent = total ? (done + ' of ' + total + ' steps done · ' + tasksDone + ' tasks complete') : '0 tasks today';
-    banner.classList.toggle('show', total > 0 && done === total);
+    subline.textContent = done + ' of ' + total + ' steps done · ' + tasksDone + ' of 1 tasks complete';
+    banner.classList.toggle('show', done === total);
   }
   boxes.forEach(function (b) {
     if (saved[b.getAttribute('data-step')]) b.checked = true;
